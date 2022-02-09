@@ -1,7 +1,7 @@
 {
   "name": "add-issue-to-projects-beta",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Adds a new issue to beta project boards",
   "keywords": [
     "github-action",
