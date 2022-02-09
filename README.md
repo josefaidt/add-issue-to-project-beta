@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add Issue to Project
-        uses: josefaidt/add-issue-to-projects-beta
+        uses: josefaidt/add-issue-to-projects-beta@v1
         with:
           project-number: 2
           project-owner: 'josefaidt'
