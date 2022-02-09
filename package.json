@@ -1,0 +1,25 @@
+{
+  "name": "add-issue-to-projects-beta",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Adds a new issue to beta project boards",
+  "keywords": [
+    "github-action",
+    "github-projects-beta"
+  ],
+  "author": "josefaidt <josef.aidt@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@octokit/graphql": "^4.8.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.1",
+    "dotenv": "^16.0.0"
+  }
+}

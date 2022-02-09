@@ -1,0 +1,15 @@
+name: add-issue-to-projects-beta
+description: 'Adds content to project boards (beta)'
+inputs:
+  project-number:
+    description: 'Project number'
+    required: true
+  project-owner:
+    description: 'Project owner (user or organization)'
+    required: true
+outputs:
+  project-item-id:
+    description: 'The ID of the content added to the project board'
+runs:
+  using: 'node16'
+  main: 'index.js'
