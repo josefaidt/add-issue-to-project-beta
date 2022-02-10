@@ -9,7 +9,7 @@
   ],
   "author": "josefaidt <josef.aidt@gmail.com>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "module": "index.js",
   "scripts": {
     "build": "ncc build index.js --license licenses.txt"
   },
