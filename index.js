@@ -39,7 +39,7 @@ const QUERY_PROJECT_ID_BY_NUMBER_BY_ORGANIZATION = gql`
 const QUERY_GET_OWNER_TYPE = gql`
   query GET_OWNER_TYPE($owner: String!) {
     repositoryOwner(login: $owner) {
-      __typename
+      type: __typename
     }
   }
 `
@@ -63,7 +63,7 @@ const request = graphql.defaults({
 try {
   const ownerType = (
     await request(QUERY_GET_OWNER_TYPE, { owner: GITHUB_PROJECT_OWNER })
-  )?.repositoryOwner?.__typename
+  )?.repositoryOwner?.type
 
   if (!ownerType) {
     setFailed(`Owner ${GITHUB_PROJECT_OWNER} not found`)
