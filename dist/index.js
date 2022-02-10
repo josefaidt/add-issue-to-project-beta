@@ -8428,7 +8428,7 @@ const QUERY_GET_OWNER_TYPE = gql`
 
 const GITHUB_PROJECT_NUMBER = parseInt((0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('project-number'), 10)
 const GITHUB_PROJECT_OWNER = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('project-owner')
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const GITHUB_TOKEN = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('github-token')
 const GITHUB_CONTENT_ID = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload.issue.node_id
 
 const GITHUB = {

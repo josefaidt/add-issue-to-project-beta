@@ -7,6 +7,9 @@ inputs:
   project-owner:
     description: 'Project owner (user or organization)'
     required: true
+  github-token:
+    description: 'GitHub PAT with private repo or org access'
+    required: true
 outputs:
   project-item-id:
     description: 'The ID of the content added to the project board'

@@ -19,8 +19,7 @@ jobs:
       - name: Add Issue to Project
         uses: josefaidt/add-issue-to-projects-beta@v1
         with:
+          github-token: ${{ secrets.TOKEN }}
           project-number: 2
           project-owner: 'josefaidt'
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
 ```

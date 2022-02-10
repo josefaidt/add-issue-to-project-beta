@@ -46,7 +46,7 @@ const QUERY_GET_OWNER_TYPE = gql`
 
 const GITHUB_PROJECT_NUMBER = parseInt(getInput('project-number'), 10)
 const GITHUB_PROJECT_OWNER = getInput('project-owner')
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const GITHUB_TOKEN = getInput('github-token')
 const GITHUB_CONTENT_ID = context.payload.issue.node_id
 
 const GITHUB = {
