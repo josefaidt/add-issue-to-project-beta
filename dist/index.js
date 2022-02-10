@@ -8447,10 +8447,22 @@ try {
     await request(QUERY_GET_OWNER_TYPE, { owner: GITHUB_PROJECT_OWNER })
   )?.repositoryOwner?.__typename
 
-  const QUERY_GET_PROJECT_ID_BY_NUMBER =
-    ownerType === GITHUB.User
-      ? QUERY_GET_PROJECT_ID_BY_NUMBER_BY_USER
-      : QUERY_PROJECT_ID_BY_NUMBER_BY_ORGANIZATION
+  if (!ownerType) {
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)(`Owner ${GITHUB_PROJECT_OWNER} not found`)
+    process.exit(1)
+  }
+
+  let QUERY_GET_PROJECT_ID_BY_NUMBER
+  if (ownerType === GITHUB.User) {
+    QUERY_GET_PROJECT_ID_BY_NUMBER = QUERY_GET_PROJECT_ID_BY_NUMBER_BY_USER
+  }
+  if (ownerType === GITHUB.Organization) {
+    QUERY_GET_PROJECT_ID_BY_NUMBER = QUERY_PROJECT_ID_BY_NUMBER_BY_ORGANIZATION
+  }
+  if (!QUERY_GET_PROJECT_ID_BY_NUMBER) {
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)(`Owner type ${ownerType} not recognized`)
+    process.exit(1)
+  }
 
   const projectId = (
     await request(QUERY_GET_PROJECT_ID_BY_NUMBER, {
