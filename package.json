@@ -8,7 +8,7 @@
     "github-projects-beta"
   ],
   "author": "josefaidt <josef.aidt@gmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "module": "index.js",
   "scripts": {
     "build": "ncc build index.js --license licenses.txt"
